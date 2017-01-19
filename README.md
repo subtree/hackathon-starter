@@ -1,5 +1,5 @@
 ![](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
-Hackathon Starter 
+Hackathon Starter
 =======================
 
 [![Dependency Status](https://david-dm.org/sahat/hackathon-starter/status.svg?style=flat)](https://david-dm.org/sahat/hackathon-starter) [![Build Status](https://travis-ci.org/sahat/hackathon-starter.svg?branch=master)](https://travis-ci.org/sahat/hackathon-starter) [![Join the chat at https://gitter.im/sahat/hackathon-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sahat/hackathon-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Thinkful Pair on Node](https://tf-assets-staging.s3.amazonaws.com/badges/thinkful_repo_badge.svg)](http://start.thinkful.com/node/)
@@ -132,8 +132,14 @@ npm install
 # Or, if you prefer to use `yarn` instead of `npm`
 yarn install
 
+# Start mongodb
+mkdir -p ./data/db
+mongod --dbpath ./data/db
+
 # Then simply start your app
 node app.js
+
+# The app should now be accessible at http://localhost:3000
 ```
 
 **Note:** I highly recommend installing [Nodemon](https://github.com/remy/nodemon).
@@ -145,7 +151,7 @@ restart the server each time you make a small change in code. To install, run
 
 Yarn vs NPM
 -----------
-Yarn is a new JavaScript package manager built by Facebook, Google, Exponent and Tilde. Yarn is not an attempt to replace `npm`, 
+Yarn is a new JavaScript package manager built by Facebook, Google, Exponent and Tilde. Yarn is not an attempt to replace `npm`,
 it's simply an alternative CLI client for fetching modules from the npm registry but it does have some unique benefits over using `npm`,
 most noticeably speed and consistency (via a lock file which ensures that only specific versions of dependencies are installed).
 Hackathon Starter includes a `yarn.lock` file by default and as project dependencies are updated, this file will be updated to reflect those changes.
@@ -461,7 +467,7 @@ Pro Tips
 --------
 
 - When installing an NPM package, add a *--save* flag, and it will be automatically
-added to `package.json` as well. For example, `npm install --save moment`.
+added to `package.json` as well. For example, `npm install --save moment` or `yarn add moment`.
 - Use [async.parallel()](https://github.com/caolan/async#parallel) when you need to run multiple
 asynchronous tasks, and then render a page, but only when all tasks are completed. For example, you might
 want to scrape 3 different websites for some data and render the results in a template
@@ -1105,7 +1111,7 @@ var YYYY = now.getFullYear();
 
 if (DD < 10) {
   DD = '0' + DD;
-} 
+}
 
 if (MM < 10) {
   MM = '0' + MM;
@@ -1376,7 +1382,7 @@ Changelog
 - Flash an error message when updating email to that which is already taken
 - Removing an email address during profile update is no longer possible
 - PayPal API example now uses *return_url* and *cancel_url* from `.env`
-- Added client-side `required=true` attributes to input fields 
+- Added client-side `required=true` attributes to input fields
 - Fixed broken `show()` function in the GitHub API example
 - Fixed YQL query in the Yahoo Weather API example
 - Fixed *Can't set headers after they are sent* error in Stripe API example
