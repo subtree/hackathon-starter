@@ -495,6 +495,12 @@ specify a list of routes that should bypass CSRF verification check.
 **Note 2:** To whitelist dynamic URLs use regular expression tests inside the
 CSRF middleware to see if `req.originalUrl` matches your desired pattern.
 
+### I wanna use DynamoDB, how do I do this?
+Make sure you make your AWS credentials available, see [this guide](https://aws.amazon.com/blogs/security/a-new-and-standardized-way-to-manage-credentials-in-the-aws-sdks/) for help on setting this up.
+
+Next, simply replace `mongoose` with `dynamoose` in you model file and it should
+work as long as you've setup your DynamoDB correctly in AWS. 
+
 ### I am getting MongoDB Connection Error, how do I fix it?
 That's a custom error message defined in `app.js` to indicate that there was a
 problem connecting to MongoDB:
