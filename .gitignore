@@ -31,5 +31,6 @@ bower_components
 .DS_Store
 Thumbs.db
 
-# Database files
+# Runtime files
 data
+uploads
